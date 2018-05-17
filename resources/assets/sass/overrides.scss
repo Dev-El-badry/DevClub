@@ -1,0 +1,121 @@
+/* ========================================
+   =========== Text Overrides ==========
+   ======================================== */
+
+.is-muted {
+	color: $grey-light !important;
+}
+
+a.is-muted:hover {
+	color: $grey !important;
+}
+
+
+/* ========================================
+   =========== End Text Overrides ==========
+   ======================================== */
+
+.dropdown {
+	position:  relative;
+
+	.dropdown-menu {
+		border-radius: 0 0 8px 8px;
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 102%;
+		z-index: 1000;
+		min-width: 200px;
+		background-color: white;
+		text-align: left;
+		box-shadow: 0 0 1px rgba(57,70,70,.15), 0 20px 55px -8px rgba(57,70,70,.25);
+	}
+
+	&.is-aligned-right .dropdown-menu{
+		right: 0;
+		left: auto;
+	}
+
+	&.is-opened .dropdown-menu {
+		display: block;
+	}
+
+	li {
+		&.seperator {
+			border: 1px solid #ccc;
+			margin: 5px 0px;
+		}
+
+		&>a {
+			margin: 5px 0;
+			padding: 5px 0px 5px 15px;
+			display: block;
+			text-decoration: none;
+			color: #777;
+			&:hover {
+				background-color: whitesmoke;
+			}
+		}
+	}
+}
+
+.navbar {
+	height: 4.5rm
+}
+
+.navbar .img {
+	max-height: 2.5rm
+}
+
+/* ========================================
+   =========== Nav Item Override ==========
+   ======================================== */
+
+// I want the .nav-item design that comes from bulma,
+// but with <button> instead of <a>. This is the bulma
+// code but targeting <button> instead, plus a few
+// modifications to normalize the <button> css
+
+button.navbar-item {
+  background-color: transparent;
+  border: none;
+  color: $text-light;
+
+  &:hover {
+    color: $link-hover;
+  }
+
+  // Modifiers
+  &.is-active {
+    color: $link-active;
+  }
+
+  &.is-tab {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    padding-bottom: calc(0.75rem - 1px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: calc(0.75rem - 1px);
+  }
+
+  &:hover {
+    border-bottom-color: $primary;
+    border-top-color: transparent;
+  }
+
+  &.is-active {
+    border-bottom: 3px solid $primary;
+    color: $primary;
+    padding-bottom: calc(0.75rem - 3px);
+  }
+}
+
+
+.navbar-item img {
+  max-height: 2.8rem;
+}
+
+.navbar {
+  height: 4.5rem;
+}
