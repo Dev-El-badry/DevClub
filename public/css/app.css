@@ -17719,3 +17719,11 @@ button.navbar-item.is-active {
   padding-right: 100px !important;
 }
 
+*.side-menu {
+  position: fixed;
+  background-color: #fff;
+  height: 100vh;
+  width: 200px;
+  overflow-y: scroll;
+}
+
