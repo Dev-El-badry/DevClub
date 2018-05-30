@@ -17335,6 +17335,10 @@ button.navbar-item.is-active {
   height: 4.5rem;
 }
 
+.is-fullwidth {
+  width: 100%;
+}
+
 .m-t-5 {
   margin-top: 5px !important;
 }
