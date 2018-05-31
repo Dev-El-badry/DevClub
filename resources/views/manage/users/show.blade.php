@@ -27,6 +27,19 @@
 				<label for="email" class="label">Email:</label>
 				<span>{{ $user->email }}</span>
 			</div>
+
+			<div class="field">
+				<label for="email" class="label">Roles:</label>
+				<ul>
+					
+					@forelse($user->roles as $role)
+					<li>{{ $role->display_name }} <small class="m-l-15">{{ $role->description }}</small></li>
+					@empty
+						<p>this is user has not been assigned any roles yet</p>
+					@endforelse
+				</ul>
+				
+			</div>
 		</div>
 		
 	</div>

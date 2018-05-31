@@ -14,25 +14,52 @@
                     <a href="{{ route('login') }}" class="navbar-item is-tab">Login</a>
                     <a href="{{ route('register') }}" class="navbar-item is-tab">Join The Community</a>
                 @else
-                    <button class="is-tab dropdown navbar-item">
-                        Hey Arnold <span class="icon"><i class="fa fa-caret-down"></i></span>
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="is-tab dropdown navbar-item">
+                            Hey {{ Auth::user()->name }} <span class="icon"><i class="fa fa-caret-down"></i></span>
+                             </button>
+                             </div>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fa fa-user-circle-o m-r-10"></i>
+                                            </span> 
+                                        Profile</a>
+                                    </li>
 
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><span class="icon"><i class="fa fa-user-circle-o m-r-10"></i></span> Profile</a></li>
-                            <li><a href="#"><span class="icon"><i class="fa fa-bell m-r-10"></i></span>Notification</a></li>
-                            <li><a href="{{ route('manage.dashboard') }}"><span class="icon"><i class="fa fa-cog m-r-10"></i></span>Manage</a></li>
-                            <li class="seperator"></li>
-                            <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();
-                            ">
-                                <span class="icon">
-                                    <i class="fa fa-sign-out m-r-10"></i>
-                                </span>Logout</a>
-                                @include('_includes.forms.logout')
-                            </li>
-                        </ul>
-                    </button>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fa fa-bell m-r-10"></i>
+                                            </span>
+                                        Notification</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('manage.dashboard') }}">
+                                            <span class="icon">
+                                                <i class="fa fa-cog m-r-10"></i>
+                                            </span>
+                                        Manage</a>
+                                    </li>
+
+                                    <li class="seperator"></li>
+
+                                    <li>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();
+                                    ">
+                                        <span class="icon">
+                                            <i class="fa fa-sign-out m-r-10"></i>
+                                        </span>Logout</a>
+                                        @include('_includes.forms.logout')
+                                    </li>
+                                </ul>
+                           
+                       
+                    </div>
                 @endif
             </div>
         </div>

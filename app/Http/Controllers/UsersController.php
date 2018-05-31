@@ -7,6 +7,7 @@ use App\User;
 use DB;
 use Session;
 use Hash;
+use App\Role;
 
 class UsersController extends Controller
 {
@@ -38,8 +39,9 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('manage.users.create');
+    {   
+        $roles = Role::all();
+        return view('manage.users.create')->withRoles($roles);
     }
 
     /**
@@ -68,12 +70,17 @@ class UsersController extends Controller
         $user->password = Hash::make($password);
         $user->save();
 
-        if($user->save()) {
-            return redirect()->route('users.index');
-        } else {
-            Session::flash('danger', 'Sorry Problem Occure While Creating User. ');
-            return redirect()->route('users.create');
+        if ($request->role_selected) {
+            $user->syncRoles(explode(',', $request->role_selected));
         }
+
+        return redirect()->route('users.index');
+        // if($user->save()) {
+        //     return redirect()->route('users.index');
+        // } else {
+        //     Session::flash('danger', 'Sorry Problem Occure While Creating User. ');
+        //     return redirect()->route('users.create');
+        // }
     }
 
     /**
@@ -84,7 +91,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::where('id', $id)->with('roles')->first();
         return view('manage.users.show')->withUser($user);
     }
 
@@ -96,9 +103,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-
-        return view('manage.users.edit')->withUser($user);
+        $roles = Role::all();
+        $user = User::where('id',$id)->with('roles')->first();
+        return view('manage.users.edit')->withUser($user)->withRoles($roles);
     }
 
     /**
@@ -129,11 +136,14 @@ class UsersController extends Controller
         }
 
         $user->save();
-        if($user->save()) {
-            return redirect()->route('users.show', $id);
-        } else {
-            Session::flash('danger', 'Sorry Error Occure While Save Changes!');
-        }
+
+        $user->syncRoles(explode(',', $request->role_selected));
+        return redirect()->route('users.show', $id);
+        // if($user->save()) {
+        //     return redirect()->route('users.show', $id);
+        // } else {
+        //     Session::flash('danger', 'Sorry Error Occure While Save Changes!');
+        // }
     }
 
     /**

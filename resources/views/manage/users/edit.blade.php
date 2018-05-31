@@ -11,11 +11,13 @@
 	
 	<hr class="hr-special">
 
-	<div class="columns">
-		<div class="column">
-			<form action="{{ route('users.update', $user->id) }}" method="POST">
-			{{ method_field('PUT') }}
-			{{ csrf_field() }}
+	<form action="{{ route('users.update', $user->id) }}" method="POST">
+
+
+		{{ method_field('PUT') }}
+		{{ csrf_field() }}
+		<div class="columns">
+			<div class="column">
 				<div class="field">
 					<label for="name" class="label">Name: </label>
 					<p class="control">
@@ -49,11 +51,27 @@
 					
 
 				</div>
-				
-				<button class="button is-success m-t-20">Save Changes</button>
-			</form>
+			</div> <!-- end .column -->
+			<div class="column">
+			<h2 class="title">Roles:</h2>
+				<input type="hidden" name="role_selected" :value="roleSelected">
+
+				@foreach($roles as $role)
+				<div class="field">
+					<b-checkbox native-value="{{ $role->id }}" v-model="roleSelected">
+						{{ $role->display_name }}
+					</b-checkbox>
+				</div>
+				@endforeach
+			</div> <!-- end column -->
 		</div>
-	</div>
+		<div class="columns">
+			<div class="column">
+			<hr class="hr-special">
+				<button class="button is-success" style="width: 250px">Save Changes</button>
+			</div>
+		</div>
+	</form>
 	
 </div>
 
@@ -65,7 +83,7 @@
       el: '#app',
       data: {
         password_options: 'keep',
-        
+        roleSelected: {!! $user->roles->pluck('id') !!}
       }
     });
   </script>
