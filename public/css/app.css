@@ -17237,58 +17237,6 @@ a.is-muted:hover {
    =========== End Text Overrides ==========
    ======================================== */
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown .dropdown-menu {
-  border-radius: 0 0 8px 8px;
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 102%;
-  z-index: 1000;
-  min-width: 200px;
-  background-color: white;
-  text-align: left;
-  -webkit-box-shadow: 0 0 1px rgba(57, 70, 70, 0.15), 0 20px 55px -8px rgba(57, 70, 70, 0.25);
-          box-shadow: 0 0 1px rgba(57, 70, 70, 0.15), 0 20px 55px -8px rgba(57, 70, 70, 0.25);
-}
-
-.dropdown.is-aligned-right .dropdown-menu {
-  right: 0;
-  left: auto;
-}
-
-.dropdown.is-opened .dropdown-menu {
-  display: block;
-}
-
-.dropdown li.seperator {
-  border: 1px solid #ccc;
-  margin: 5px 0px;
-}
-
-.dropdown li > a {
-  margin: 5px 0;
-  padding: 5px 0px 5px 15px;
-  display: block;
-  text-decoration: none;
-  color: #777;
-}
-
-.dropdown li > a:hover {
-  background-color: whitesmoke;
-}
-
-.navbar {
-  height: 4.5rm;
-}
-
-.navbar .img {
-  max-height: 2.5rm;
-}
-
 /* ========================================
    =========== Nav Item Override ==========
    ======================================== */
@@ -17337,6 +17285,10 @@ button.navbar-item.is-active {
 
 .is-fullwidth {
   width: 100%;
+}
+
+.navbar-dropdown a.navbar-item {
+  font-size: 1.1rem;
 }
 
 .m-t-5 {
@@ -17787,12 +17739,30 @@ button.navbar-item.is-active {
   padding-right: 100px !important;
 }
 
-*.side-menu {
+*#admin-side-menu {
   position: fixed;
+  left: -200px;
+  bottom: 0;
+  top: 4.5rem;
   background-color: #fff;
   height: 100vh;
   width: 200px;
   overflow-y: scroll;
+  z-index: 1000;
+  -webkit-transition: left 0.3 ease-in-out;
+  transition: left 0.3 ease-in-out;
+}
+
+*#admin-side-menu.is-active {
+  -webkit-transition: left 0.3 ease-in-out;
+  transition: left 0.3 ease-in-out;
+  left: 0px;
+}
+
+@media screen and (min-width: 1088px) {
+  *#admin-side-menu {
+    left: 0;
+  }
 }
 
 .management-area {
@@ -17812,5 +17782,35 @@ button.navbar-item.is-active {
 
 table {
   width: 100%;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#btn-sidemenu-out {
+  font-size: 1.5rem;
+  -webkit-transition: 0.3;
+  transition: 0.3;
+}
+
+#btn-sidemenu-out.is-active {
+  -webkit-transition: 0.3;
+  transition: 0.3;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.navbar-burger {
+  border: none;
+  top: 10px;
 }
 

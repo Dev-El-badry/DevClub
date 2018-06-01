@@ -22,7 +22,7 @@
 				<label for="name" class="label">Name:</label>
 				<span>{{ $user->name }}</span>
 			</div>
-
+			
 			<div class="field">
 				<label for="email" class="label">Email:</label>
 				<span>{{ $user->email }}</span>

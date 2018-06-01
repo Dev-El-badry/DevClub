@@ -15,57 +15,10 @@ a.is-muted:hover {
    =========== End Text Overrides ==========
    ======================================== */
 
-.dropdown {
-	position:  relative;
+// .dropdown {
+// 	position:  relative;
 
-	.dropdown-menu {
-		border-radius: 0 0 8px 8px;
-		display: none;
-		position: absolute;
-		left: 0;
-		top: 102%;
-		z-index: 1000;
-		min-width: 200px;
-		background-color: white;
-		text-align: left;
-		box-shadow: 0 0 1px rgba(57,70,70,.15), 0 20px 55px -8px rgba(57,70,70,.25);
-	}
 
-	&.is-aligned-right .dropdown-menu{
-		right: 0;
-		left: auto;
-	}
-
-	&.is-opened .dropdown-menu {
-		display: block;
-	}
-
-	li {
-		&.seperator {
-			border: 1px solid #ccc;
-			margin: 5px 0px;
-		}
-
-		&>a {
-			margin: 5px 0;
-			padding: 5px 0px 5px 15px;
-			display: block;
-			text-decoration: none;
-			color: #777;
-			&:hover {
-				background-color: whitesmoke;
-			}
-		}
-	}
-}
-
-.navbar {
-	height: 4.5rm
-}
-
-.navbar .img {
-	max-height: 2.5rm
-}
 
 /* ========================================
    =========== Nav Item Override ==========
@@ -122,4 +75,10 @@ button.navbar-item {
 
 .is-fullwidth {
 	width: 100%
+}
+
+.navbar-dropdown {
+	a.navbar-item {
+		font-size: 1.1rem;
+	}
 }

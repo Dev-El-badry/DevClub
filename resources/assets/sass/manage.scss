@@ -1,10 +1,25 @@
-*.side-menu {
+*#admin-side-menu {
     position: fixed;
+    left: -200px;
+    bottom: 0;
+    top: 4.5rem;
     background-color: #fff;
     height: 100vh;
     width: 200px;
     overflow-y: scroll;
+    z-index: 1000;
+	transition: left 0.3 ease-in-out;
+    &.is-active {
+    	transition: left 0.3 ease-in-out;
+		left: 0px;
+    }
+
+    @include desktop {
+		left: 0;
+    }
 }
+
+
 
 .management-area {
 	position: absolute;
@@ -23,4 +38,29 @@
 
 table {
 	width: 100%;
+}
+
+.submenu {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul {
+	margin-top: 0px;
+	margin-bottom: 0px
+}
+
+#btn-sidemenu-out {
+	font-size: 1.5rem;
+	transition: 0.3;
+	&.is-active {
+		transition: 0.3;
+		transform: rotateY(180deg);
+	}
+}
+
+.navbar-burger {
+	border: none;
+	top: 10px
 }
