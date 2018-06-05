@@ -17814,3 +17814,86 @@ table {
   top: 10px;
 }
 
+.title.is-admin {
+  font-weight: 400;
+}
+
+.widget-area {
+  min-width: 75px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+}
+
+.widget-area.author-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.widget-area.author-widget img {
+  border-radius: 25px;
+}
+
+.widget-area.author-widget .author {
+  margin: auto 0 auto 10px;
+}
+
+.widget-area.author-widget .author .subtitle {
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+.widget-area.post-status-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.widget-area.post-status-widget .status-icon {
+  min-width: 50px;
+}
+
+.widget-area.post-status-widget .status-icon .icon {
+  width: 100%;
+}
+
+.widget-area.post-status-widget .status-icon .icon i {
+  text-align: center;
+}
+
+.widget-area.post-status-widget .status-details {
+  margin-left: 10px;
+}
+
+.widget-area.post-status-widget .status-details h4 {
+  font-weight: 400;
+}
+
+.widget-area.post-status-widget .status-details h4 span.status-emphasis {
+  font-weight: 800;
+}
+
+.widget-area.post-status-widget .status-details p {
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+.widget-area.publish-button-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 50px;
+}
+
+.widget-area.publish-button-widget .secondary-action-button,
+.widget-area.publish-button-widget .primary-action-button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 5px;
+}
+
