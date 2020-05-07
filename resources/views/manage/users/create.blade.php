@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="flex-container">
-	<div class="columns m-t-10">
+	<div class="columns m-t-20">
 		<div class="column">
 			<h2 class="title">Create New User</h2>
 		</div>

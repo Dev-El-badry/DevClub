@@ -1,0 +1,90 @@
+schema database 
+first cycle :-
+
+tow basics to define price [ deadline_table - academic level]
+
+deadline_table => ID - period 
+
+academic level => ID - name 
+
+
+level_assign_deadline_table
+=> ID - deadline_id - level_id - price
+
+
+=> category => ID - title - short_description
+
+first category some like of that : 
+- ID: 1
+- title: writing from scratch
+- short_description: writing from scratch price is specified for 1 page (275 word)
+
+type of relationship is one to many
+
+first cycle how to work 
+- dealine_table => 1 - hours
+- academic_level => 1 - ungraduated
+-create category => then create level_assign_deadline_table with price;
+
+relationship between tables 
+
+academic_level and deadline_table is many to many ( level_assign_deadline_table )
+category (type of work) and level_assign_deadline_table is one to many 
+
+
+
+other information (database) [create some tables]
+- type of paper => id - title
+- paper_format => id - title
+- subject => id - title  [] => relation with complex_assignment[ boolean (true/false) ] 
+
+pricing_page_table 
+
+complex_assignment => [no.of price]
+one_slide => [price]
+soft_copy => [price]
+prolble => [price]
+
+
+spacing_for_one_page_table => type_title [1.5m] - price
+
+
+free_features_table [id - title]
+additional_features [id - title - precentage[boolean (true OR false) - cost]]
+software => [title - cost]
+==================== tow part
+plans for choose your writer
+
+plans_table => id - title - percentage_pricing
+
+
+
+discount_code_table [id - precentage[boolean (true OR false)] - cost - expire_at - created_at]
+
+
+=================== insert orders
+id - type_paper_id 
+- subject_id 
+- topic(text) 
+- material_file 
+- paper_format_id 
+- academic_level_id 
+- category_id 
+- dead_line_id 
+- pages_num 
+- spacing_id 
+- num_slide(int)
+- sources
+- soft_copy (true OR false)
+- your_writer_id
+- addition_features [string of list (1,2,3)]
+- software_id
+- pages_cost
+- slides_cost
+- addition_features_cost
+- soft_copies_cost
+- software_cost
+- plan_id
+- code_id
+- user_id
+- username - email - phone_number - 

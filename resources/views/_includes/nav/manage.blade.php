@@ -11,6 +11,14 @@
 			<a href="{{ route('posts.index') }}" class="{{ Nav::isResource('posts') }}">Blog Posts</a></li>
 		</ul>
 
+		<p class="menu-label">Quote</p>
+		<ul class="menu-list">
+			<li>
+			<a href="{{ route('manage.academic_level') }}" class="{{ Nav::isRoute('manage.academic_level') }}">Academic Levels</a></li>
+			<a href="{{ route('manage.deadline') }}" class="{{ Nav::isRoute('manage.deadline') }}">Deadlines</a></li>
+			<a href="{{ route('category.index') }}" class="{{ Nav::isResource('category') }}">Manage Categories</a></li>
+		</ul>
+
 		<p class="menu-label">Administration</p>
 		<ul class="menu-list">
 			<li><a href="{{ route('users.index') }}" class="{{ Nav::isResource('users') }}">Manage Users</a></li>

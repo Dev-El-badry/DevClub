@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Paper Plus</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,8 +16,10 @@
 </head>
 <body >
     @include('_includes.nav.main')
-    <div id="app">
-        @yield('content')
+    <div id="app" >
+       
+            @yield('content')
+     
     </div>
 
     <!-- Scripts -->

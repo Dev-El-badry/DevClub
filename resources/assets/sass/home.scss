@@ -1,0 +1,47 @@
+  
+.main-banner {
+    
+    @include background();
+
+    .banner-content {
+        margin-top: 15vh;
+        z-index: 12;
+        align-items: center;
+       
+
+        h1, h2 {
+            color: #fff;
+        }
+
+        .subtitle {
+            padding: 10px;
+            background: rgba(lighten($primary-color, 2), 0.5);
+            text-align: justify;
+        }
+
+        .get-qoute {
+            .card-header-title {
+                font-size: 2rem;
+            }
+
+            .footer-actions {
+                margin: 0 auto;
+                padding: 20px;
+
+                .get-price {
+                    line-height: 4rem;
+                }
+            }
+        }
+
+    }
+
+   
+}
+
+
+@media screen and (min-width: 769px), print {
+    .get-qoute .field-label {
+      flex-grow: 2; /* overwrites previous value of 1 */
+    }
+  }

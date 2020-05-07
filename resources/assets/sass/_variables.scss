@@ -1,8 +1,8 @@
 
 // Body
 $body-background-color: whitesmoke;
-
-
+$primary-color: #444;
+$secondary-color: gold;
 // Brands
 $brand-primary: #3097D1;
 $brand-info: #8eb4cb;
@@ -25,3 +25,39 @@ $btn-default-color: $text-color;
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+$show-image-in-home: true;
+$home-image: url(/images/2d2eb19d038a4704472eb61900746cf2.jpg);
+$background-opacity: 0.9;
+$gradient-color:  linear-gradient(to right, $primary-color , $secondary-color);
+
+
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin background {
+    @if $show-image-in-home {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: calc(120vh - 144PX);
+            position: relative;
+            
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background: rgba($primary-color, $background-opacity);
+            }
+        }
+        
+    }
+}
+  

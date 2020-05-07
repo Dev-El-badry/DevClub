@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 class ManageController extends Controller
 {
     public function index() {
@@ -13,5 +13,9 @@ class ManageController extends Controller
     public function dashboard() {
     	
     	return view('manage.dashboard');
+    }
+
+    public function logout() {
+    	Auth::logout();
     }
 }
